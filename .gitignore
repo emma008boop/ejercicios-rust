@@ -1,0 +1,28 @@
+target/
+
+# Archivos de respaldo de Cargo (generados al actualizar dependencias)
+**/*.rs.bk
+
+# --- Entorno y Secretos ---
+# Archivos de variables de entorno (donde guardas API keys, etc.)
+.env
+
+# --- Editores ---
+# Visual Studio Code
+.vscode/
+# Si quieres compartir la configuración de VSCode con el equipo, 
+# puedes comentar la línea anterior, pero ignora los archivos de usuario:
+# .vscode/settings.json
+# .vscode/tasks.json
+
+# IntelliJ / PyCharm / CLion
+.idea/
+*.iml
+
+# Archivos temporales de Vim o Emacs
+*~
+*.swp
+
+# --- Sistema Operativo ---
+.DS_Store
+Thumbs.db
