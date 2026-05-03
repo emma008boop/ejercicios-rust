@@ -1,15 +1,20 @@
-use validador_de_transacciones::models::{Transaccion, Verificable};
-fn main() {
-   let transaccion_nueva = Transaccion { 
+use validador_de_transacciones::models::{Transaccion, Usuario};
+#[tokio::main]
+async fn main() {
+   let tx = Transaccion { 
         emisor : String::from("Alice"),
-        receptor : String::from("bob"),
+        receptor : String::from("Emma"),
         monto: 250,
    };
 
-   if transaccion_nueva.realizar_verificacion() {
-        println!("Transaccion verificada")
-   } else {
-        println!("No se pudo verificar la transaccion");
-   }
+   let usuario = Usuario{
+     edad: 18,
+     nombre: String::from("Emma"),
+   };
+
+   let registro = usuario.validar_remoto().await;
+   let es_valida = tx.validar_remoto().await;
+   println!("Resultado final {}", es_valida);
+   println!("El usuario puede registrate? {}", registro)
 
 }
